@@ -22,6 +22,16 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Strategy.Sample1
             _swimable.Swim();
         }
 
+        public void SetFlyBehavior(IFlyable flyable)
+        {
+            _flyable = flyable;
+        }
+
+        public void SetSwimBehavior(ISwimable swimable)
+        {
+            _swimable = swimable;
+        }
+
         public void HetchEggs()
         {
             Console.WriteLine("{0} can hetch eggs.", this.GetType().Name);
