@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bird.cs" />
+    <Compile Include="Flyable.cs" />
+    <Compile Include="IFlyable.cs" />
+    <Compile Include="ISwimable.cs" />
+    <Compile Include="NoFlyable.cs" />
+    <Compile Include="NoSwimable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrategySample1.cs" />
   </ItemGroup>
