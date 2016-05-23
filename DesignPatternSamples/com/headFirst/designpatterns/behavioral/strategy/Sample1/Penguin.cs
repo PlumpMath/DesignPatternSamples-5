@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Com.HeadFirst.DesignPatterns.Behavioral.Strategy.Sample1
+﻿namespace Com.HeadFirst.DesignPatterns.Behavioral.Strategy.Sample1
 {
     class Penguin : Bird
     {
