@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "decorator", "decorator", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample1", "com\headFirst\designpatterns\structural\decorator\Sample1\Sample1.csproj", "{645BF1FC-84B5-4709-9B17-F2605BF78047}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample2", "com\headFirst\designpatterns\structural\decorator\Sample2\Sample2.csproj", "{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{645BF1FC-84B5-4709-9B17-F2605BF78047}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{645BF1FC-84B5-4709-9B17-F2605BF78047}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{645BF1FC-84B5-4709-9B17-F2605BF78047}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,5 +60,6 @@ Global
 		{CCBD7010-FF46-48B6-8748-7788A0273474} = {635D5F08-01F0-4E28-8DAD-2FA55558354A}
 		{C3FC1C45-3A41-46F9-9AA4-AFF84D8289B3} = {300CCDA3-53A2-4A4C-832E-D4EB9555D883}
 		{645BF1FC-84B5-4709-9B17-F2605BF78047} = {C3FC1C45-3A41-46F9-9AA4-AFF84D8289B3}
+		{3F427C3A-5BA1-49A1-9BCF-7B1ED946888B} = {C3FC1C45-3A41-46F9-9AA4-AFF84D8289B3}
 	EndGlobalSection
 EndGlobal

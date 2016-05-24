@@ -4,7 +4,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Strategy.Sample1
 {
     class StrategySample1
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             Bird penguin = new Penguin();
 

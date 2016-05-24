@@ -4,7 +4,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Decorator.Sample1
 {
     class DecoratorSample1
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var whiteBreadSandwich = new WhiteBreadSandwich(30);
 
