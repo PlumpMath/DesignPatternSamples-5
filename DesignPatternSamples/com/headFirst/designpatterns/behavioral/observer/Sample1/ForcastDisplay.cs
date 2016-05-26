@@ -2,7 +2,7 @@
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Observer.Sample1
 {
-    class ForcastDisplay : IObserver
+    class ForcastDisplay : IObserver, IDisposable
     {
         private readonly IObservable _observable;
         private float currentPressure = 29.92f;
@@ -27,6 +27,21 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Observer.Sample1
                 Console.WriteLine("More of the same");
             else
                 Console.WriteLine("Watch out for cooler, rainy weather");
+        }
+
+        private void unregister()
+        {
+            _observable.RemoveObserver(this);
+        }
+
+        public void Dispose()
+        {
+            unregister();
+        }
+
+        ~ForcastDisplay()
+        {
+            unregister();
         }
     }
 }

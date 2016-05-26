@@ -2,7 +2,7 @@
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Observer.Sample1
 {
-    class HeatIndexDisplay : IObserver
+    class HeatIndexDisplay : IObserver, IDisposable
     {
         private readonly IObservable _observable;
 
@@ -28,6 +28,21 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Observer.Sample1
                 0.000000000843296 * (t * t * rh * rh * rh)) -
                 (0.0000000000481975 * (t * t * t * rh * rh * rh)));
             return index;
+        }
+
+        private void unregister()
+        {
+            _observable.RemoveObserver(this);
+        }
+
+        public void Dispose()
+        {
+            unregister();
+        }
+
+        ~HeatIndexDisplay()
+        {
+            unregister();
         }
     }
 }

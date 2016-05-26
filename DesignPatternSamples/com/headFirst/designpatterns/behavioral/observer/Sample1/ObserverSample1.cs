@@ -15,7 +15,10 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Observer.Sample1
             weatherForcaster.SetWeatherMeasurement(new WeatherObject(80, 65, 30.4f));
             weatherForcaster.SetWeatherMeasurement(new WeatherObject(82, 70, 29.2f));
             weatherForcaster.SetWeatherMeasurement(new WeatherObject(78, 90, 29.2f));
-            
+
+            currentDisplay.Dispose();
+            statisticDisplay.Dispose();
+
             HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherForcaster);
 
             weatherForcaster.SetWeatherMeasurement(new WeatherObject(80, 65, 30.4f));
