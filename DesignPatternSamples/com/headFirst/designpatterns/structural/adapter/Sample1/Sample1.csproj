@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassTypeAccountAdapter.cs" />
+    <Compile Include="IAccount.cs" />
     <Compile Include="AdapterSample1.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="ObjecrTypeAccountAdapter.cs" />
+    <Compile Include="OffshoreAccount.cs" />
+    <Compile Include="PlatinumAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
