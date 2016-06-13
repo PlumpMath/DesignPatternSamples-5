@@ -49,6 +49,7 @@
     <Compile Include="CoffeeWithHook.cs" />
     <Compile Include="ICoffeeBeverage.cs" />
     <Compile Include="Tea.cs" />
+    <Compile Include="TeaWithHook.cs" />
     <Compile Include="TemplateMethodSample1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
