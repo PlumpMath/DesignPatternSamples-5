@@ -16,6 +16,16 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.TemplateMethod.Sample1
             Console.WriteLine("Making tea...");
             beverage.PrepareRecipe();
 
+            beverage = new CoffeeWithHook();
+
+            Console.WriteLine("Making coffee...");
+            beverage.PrepareRecipe();
+
+            beverage = new TeaWithHook();
+
+            Console.WriteLine("Making tea...");
+            beverage.PrepareRecipe();
+
             Console.Read();
         }
     }

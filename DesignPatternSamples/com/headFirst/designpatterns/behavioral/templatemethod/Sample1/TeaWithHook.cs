@@ -13,6 +13,8 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.TemplateMethod.Sample1
         protected override void brew()
         {
             Console.WriteLine("Steeping the tea");
+        }
+
         protected override bool customerWantsCondiments()
         {
             var ans = getUserInput();
