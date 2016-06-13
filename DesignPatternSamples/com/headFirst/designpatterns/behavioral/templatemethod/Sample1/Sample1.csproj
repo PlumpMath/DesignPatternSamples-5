@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coffee.cs" />
     <Compile Include="CoffeeBeverage.cs" />
     <Compile Include="ICoffeeBeverage.cs" />
     <Compile Include="TemplateMethodSample1.cs" />
