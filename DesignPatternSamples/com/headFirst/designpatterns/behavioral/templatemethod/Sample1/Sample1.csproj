@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Coffee.cs" />
     <Compile Include="CoffeeBeverage.cs" />
+    <Compile Include="CoffeeBeverageWithHook.cs" />
     <Compile Include="ICoffeeBeverage.cs" />
     <Compile Include="Tea.cs" />
     <Compile Include="TemplateMethodSample1.cs" />
