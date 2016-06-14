@@ -46,6 +46,7 @@
     <Compile Include="CommandSample2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver\IFileSystemReceiver.cs" />
+    <Compile Include="Receiver\UnixFileSystemReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
