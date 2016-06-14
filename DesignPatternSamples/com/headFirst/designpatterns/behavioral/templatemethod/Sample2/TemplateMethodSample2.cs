@@ -35,6 +35,10 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.TemplateMethod.Sample2
 
             DisplayUncomaparableDwarfs(sevenUncomparableDwarfs);
 
+            Array.Sort(sevenUncomparableDwarfs, new IdWiseDwarfComparer());
+
+            DisplayUncomaparableDwarfs(sevenUncomparableDwarfs);
+
             Console.Read();
         }
 
