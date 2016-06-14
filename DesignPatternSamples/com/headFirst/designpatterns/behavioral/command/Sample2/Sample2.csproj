@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandSample2.cs" />
+    <Compile Include="Command\CloseFileCommand.cs" />
     <Compile Include="Command\ICommand.cs" />
+    <Compile Include="Command\OpenFileCommand.cs" />
+    <Compile Include="Command\ReadFileCommand.cs" />
+    <Compile Include="Command\WriteFileCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver\IFileSystemReceiver.cs" />
     <Compile Include="Receiver\UnixFileSystemReceiver.cs" />
