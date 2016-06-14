@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,7 @@
     <Compile Include="Command\OpenFileCommand.cs" />
     <Compile Include="Command\ReadFileCommand.cs" />
     <Compile Include="Command\WriteFileCommand.cs" />
+    <Compile Include="FileSystemReceiverUtil.cs" />
     <Compile Include="Invoker\FileInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receiver\IFileSystemReceiver.cs" />
