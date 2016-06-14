@@ -16,6 +16,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.TemplateMethod.Sample2
             sevenDwarfs[5] = new Dwarf() { Name = "Sneezy", Id = 6 };
             sevenDwarfs[6] = new Dwarf() { Name = "Grumpy", Id = 7 };
 
+            // To use Array.Sort method, Dwarf class must implement IComaparable interface.
             Array.Sort(sevenDwarfs);
 
             DisplayDwarfs(sevenDwarfs);
