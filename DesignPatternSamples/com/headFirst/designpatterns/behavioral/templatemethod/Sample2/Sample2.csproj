@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dwarf.cs" />
+    <Compile Include="NamewiseDwarfComparer.cs" />
     <Compile Include="TemplateMethodSample2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UncomparableDwarf.cs" />
