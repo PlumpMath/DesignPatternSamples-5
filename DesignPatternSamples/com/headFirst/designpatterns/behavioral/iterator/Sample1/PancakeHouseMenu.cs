@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
 {
-    class PancakeHouseMenu
+    class PancakeHouseMenu : IEnumerable<MenuItem>
     {
         ArrayList _menuItems;
 
@@ -30,9 +26,21 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             _menuItems.Add(item);
         }
 
+        public IEnumerator<MenuItem> GetEnumerator()
+        {
+            for (int i = 0; i < _menuItems.Count; i++)
+                yield return (MenuItem)_menuItems[i];
+        }
+
         public ArrayList GetMenuItems()
         {
             return _menuItems;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            for (int i = 0; i < _menuItems.Count; i++)
+                yield return _menuItems[i];
         }
     }
 }

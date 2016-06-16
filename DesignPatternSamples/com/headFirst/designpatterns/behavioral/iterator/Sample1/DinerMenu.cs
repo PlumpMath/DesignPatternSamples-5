@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
 {
-    class DinerMenu
+    class DinerMenu : IEnumerable<MenuItem>
     {
         readonly int MAX_ITEMS = 6;
         int _noOfItems = 0;
@@ -35,6 +37,18 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
         public MenuItem[] GetMenuItems()
         {
             return _menuItems;
+        }
+
+        public IEnumerator<MenuItem> GetEnumerator()
+        {
+            for (int i = 0; i < _menuItems.Length; i++)
+                yield return _menuItems[i];
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            for (int i = 0; i < _menuItems.Length; i++)
+                yield return _menuItems[i];
         }
     }
 }
