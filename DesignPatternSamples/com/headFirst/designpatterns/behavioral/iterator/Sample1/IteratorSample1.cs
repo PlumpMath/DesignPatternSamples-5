@@ -12,7 +12,23 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             Waitress _waitress = new Waitress(_pancakeHouseMenu, _dinerMenu);
 
             _waitress.PrintMenu();
-            _waitress.PrintVegeterianMenu();
+            _waitress.PrintVegetarianMenu();
+
+            Console.WriteLine("Customer asks, is the Hotdog vegetarian?");
+            Console.Write("Waitress says: ");
+
+            if (_waitress.IsVegetarian("Hotdog"))
+                Console.WriteLine("Yes");
+            else
+                Console.WriteLine("No");
+
+            Console.WriteLine("Customer asks, are the Waffles vegetarian?");
+            Console.Write("Waitress says: ");
+
+            if (_waitress.IsVegetarian("Waffles"))
+                Console.WriteLine("Yes");
+            else
+                Console.WriteLine("No");
 
             Console.Read();
         }

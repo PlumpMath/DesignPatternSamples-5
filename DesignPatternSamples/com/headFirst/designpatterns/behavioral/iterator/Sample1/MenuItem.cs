@@ -2,11 +2,11 @@
 {
     class MenuItem
     {
-        public MenuItem(string name, string description, bool vegeterian, double price)
+        public MenuItem(string name, string description, bool vegetarian, double price)
         {
             Name = name;
             Description = description;
-            Vegeterian = vegeterian;
+            Vegetarian = vegetarian;
             Price = price;          
         }
 
@@ -14,7 +14,7 @@
 
         public string Description { get; private set; }
 
-        public bool Vegeterian { get; private set; }
+        public bool Vegetarian { get; private set; }
 
         public double Price { get; private set; }
     }

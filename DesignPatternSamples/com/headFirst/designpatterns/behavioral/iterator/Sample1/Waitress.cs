@@ -25,14 +25,24 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             printMenu(dinerEnumerator);
         }
 
-        public void PrintVegeterianMenu()
+        public void PrintVegetarianMenu()
         {
             Console.WriteLine("\r\nVEGETARIAN MENU\r\n---------------");
-            printVegeterianMenu(_pancakeHouseMenu.GetEnumerator());
-            printVegeterianMenu(_dinerMenu.GetEnumerator());
+            printVegetarianMenu(_pancakeHouseMenu.GetEnumerator());
+            printVegetarianMenu(_dinerMenu.GetEnumerator());
         }
 
-        private void printMenu(IEnumerator<MenuItem> enumerator)
+        public bool IsVegetarian(string name)
+        {
+            bool retVal = false;
+            if (isVegetarian(name, _pancakeHouseMenu.GetEnumerator()))
+                retVal = true;
+            else if (isVegetarian(name, _dinerMenu.GetEnumerator()))
+                retVal = true;
+            return retVal;
+        }
+
+        private static void printMenu(IEnumerator<MenuItem> enumerator)
         {
             while (enumerator.MoveNext())
             {
@@ -43,7 +53,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             }
         }
 
-        private void printVegeterianMenu(IEnumerator<MenuItem> enumerator)
+        private static void printVegetarianMenu(IEnumerator<MenuItem> enumerator)
         {
             while (enumerator.MoveNext())
             {
@@ -55,6 +65,21 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
                     Console.WriteLine(item.Description);
                 }
             }
+        }
+
+        private static bool isVegetarian(string name, IEnumerator<MenuItem> enumerator)
+        {
+            bool retVal = false;
+            while (enumerator.MoveNext())
+            {
+                var item = enumerator.Current;
+                if (name.Equals(item.Name) && item.Vegeterian)
+                {
+                    retVal = true;
+                    break;
+                }
+            }
+            return retVal;
         }
     }
 }

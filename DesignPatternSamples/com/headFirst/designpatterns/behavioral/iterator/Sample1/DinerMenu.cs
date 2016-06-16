@@ -22,9 +22,9 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             AddItem("Pasta", "Spaghetti with Marinara Sauce, and a slice of sourdough bread", true, 3.89);
         }
 
-        public void AddItem(string name, string description, bool vegeterian, double price)
+        public void AddItem(string name, string description, bool vegetarian, double price)
         {
-            var item = new MenuItem(name, description, vegeterian, price);
+            var item = new MenuItem(name, description, vegetarian, price);
 
             if (_noOfItems >= MAX_ITEMS)
                 Console.WriteLine("Sorry, menu is full! Can't add item to menu");

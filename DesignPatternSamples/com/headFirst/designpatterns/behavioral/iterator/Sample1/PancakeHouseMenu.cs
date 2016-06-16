@@ -20,9 +20,9 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             AddItem("Waffles", "Waffles, with your choice of blueberries or strawberries", true, 3.59);
         }
 
-        public void AddItem(string name, string description, bool vegeterian, double price)
+        public void AddItem(string name, string description, bool vegetarian, double price)
         {
-            var item = new MenuItem(name, description, vegeterian, price);
+            var item = new MenuItem(name, description, vegetarian, price);
             _menuItems.Add(item);
         }
 
