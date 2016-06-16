@@ -5,10 +5,10 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
 {
     class Waitress
     {
-        PancakeHouseMenu _pancakeHouseMenu;
-        DinerMenu _dinerMenu;
+        IEnumerable<MenuItem> _pancakeHouseMenu;
+        IEnumerable<MenuItem> _dinerMenu;
 
-        public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu)
+        public Waitress(IEnumerable<MenuItem> pancakeHouseMenu, IEnumerable<MenuItem> dinerMenu)
         {
             _pancakeHouseMenu = pancakeHouseMenu;
             _dinerMenu = dinerMenu;
