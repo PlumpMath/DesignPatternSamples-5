@@ -12,6 +12,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             Waitress _waitress = new Waitress(_pancakeHouseMenu, _dinerMenu);
 
             _waitress.PrintMenu();
+            _waitress.PrintVegeterianMenu();
 
             Console.Read();
         }
