@@ -8,8 +8,9 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
         {
             PancakeHouseMenu _pancakeHouseMenu = new PancakeHouseMenu();
             DinerMenu _dinerMenu = new DinerMenu();
+            CafeMenu _cafeMenu = new CafeMenu();
 
-            Waitress _waitress = new Waitress(_pancakeHouseMenu, _dinerMenu);
+            Waitress _waitress = new Waitress(_pancakeHouseMenu, _dinerMenu, _cafeMenu);
 
             _waitress.PrintMenu();
             _waitress.PrintVegetarianMenu();

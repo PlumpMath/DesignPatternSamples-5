@@ -7,22 +7,27 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
     {
         IEnumerable<MenuItem> _pancakeHouseMenu;
         IEnumerable<MenuItem> _dinerMenu;
+        IEnumerable<MenuItem> _cafeMenu;
 
-        public Waitress(IEnumerable<MenuItem> pancakeHouseMenu, IEnumerable<MenuItem> dinerMenu)
+        public Waitress(IEnumerable<MenuItem> pancakeHouseMenu, IEnumerable<MenuItem> dinerMenu, IEnumerable<MenuItem> cafeMenu)
         {
             _pancakeHouseMenu = pancakeHouseMenu;
             _dinerMenu = dinerMenu;
+            _cafeMenu = cafeMenu;
         }
 
         public void PrintMenu()
         {
             var dinerEnumerator = _dinerMenu.GetEnumerator();
             var pancakeHouseEnumerator = _pancakeHouseMenu.GetEnumerator();
+            var cafeEnumerator = _cafeMenu.GetEnumerator();
 
             Console.WriteLine("MENU\r\n----\r\nBREAKFAST");
             printMenu(pancakeHouseEnumerator);
             Console.WriteLine("\r\nLUNCH");
             printMenu(dinerEnumerator);
+            Console.WriteLine("\r\DINNER");
+            printMenu(cafeEnumerator);
         }
 
         public void PrintVegetarianMenu()
@@ -30,6 +35,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             Console.WriteLine("\r\nVEGETARIAN MENU\r\n---------------");
             printVegetarianMenu(_pancakeHouseMenu.GetEnumerator());
             printVegetarianMenu(_dinerMenu.GetEnumerator());
+            printVegetarianMenu(_cafeMenu.GetEnumerator());
         }
 
         public bool IsVegetarian(string name)
@@ -38,6 +44,8 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             if (isVegetarian(name, _pancakeHouseMenu.GetEnumerator()))
                 retVal = true;
             else if (isVegetarian(name, _dinerMenu.GetEnumerator()))
+                retVal = true;
+            else if (isVegetarian(name, _cafeMenu.GetEnumerator()))
                 retVal = true;
             return retVal;
         }
@@ -58,7 +66,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             while (enumerator.MoveNext())
             {
                 var item = enumerator.Current;
-                if (item.Vegeterian)
+                if (item.Vegetarian)
                 {
                     Console.Write(string.Concat(item.Name, ","));
                     Console.Write(string.Concat(item.Price, " -- "));
@@ -73,7 +81,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             while (enumerator.MoveNext())
             {
                 var item = enumerator.Current;
-                if (name.Equals(item.Name) && item.Vegeterian)
+                if (name.Equals(item.Name) && item.Vegetarian)
                 {
                     retVal = true;
                     break;
