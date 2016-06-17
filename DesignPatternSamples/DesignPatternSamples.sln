@@ -75,6 +75,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "composite", "composite", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample1", "com\headFirst\designpatterns\structural\composite\Sample1\Sample1.csproj", "{CA033DC5-C1D5-402F-A981-8C9E10D87F93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample2", "com\headFirst\designpatterns\structural\composite\Sample2\Sample2.csproj", "{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +151,10 @@ Global
 		{CA033DC5-C1D5-402F-A981-8C9E10D87F93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA033DC5-C1D5-402F-A981-8C9E10D87F93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA033DC5-C1D5-402F-A981-8C9E10D87F93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,5 +195,6 @@ Global
 		{F49FF3C0-7DC0-4B7D-A91B-095C3D9FFA56} = {5EDBC0EC-1CA3-4416-9985-B1577B18F5BC}
 		{FA6B7757-1CE7-41EF-BE00-6F800F42D330} = {300CCDA3-53A2-4A4C-832E-D4EB9555D883}
 		{CA033DC5-C1D5-402F-A981-8C9E10D87F93} = {FA6B7757-1CE7-41EF-BE00-6F800F42D330}
+		{EEA952DF-CFEA-4311-8AC7-0FF8E792FC96} = {FA6B7757-1CE7-41EF-BE00-6F800F42D330}
 	EndGlobalSection
 EndGlobal
