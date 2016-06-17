@@ -26,7 +26,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample1
             printMenu(pancakeHouseEnumerator);
             Console.WriteLine("\r\nLUNCH");
             printMenu(dinerEnumerator);
-            Console.WriteLine("\r\DINNER");
+            Console.WriteLine("\r\nDINNER");
             printMenu(cafeEnumerator);
         }
 
