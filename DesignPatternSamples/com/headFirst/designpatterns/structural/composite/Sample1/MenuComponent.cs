@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 {
-    abstract class MenuComponent
+    abstract class MenuComponent : IEnumerable<MenuComponent>
     {
         protected MenuComponent(string name, string description)
         {
@@ -34,5 +36,12 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
         public virtual double Price { get { throw new InvalidOperationException(); } protected set { } }
 
         public abstract void Print();
+
+        public abstract IEnumerator<MenuComponent> GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
+        }
     }
 }
