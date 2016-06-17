@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 {
@@ -22,6 +23,11 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
                 Console.Write("(v)");
             Console.Write(string.Concat(", ", Price));
             Console.WriteLine(string.Concat("   -- ", Description));
+        }
+
+        public override IEnumerator<MenuComponent> GetEnumerator()
+        {
+            return new NullEnumerator();
         }
     }
 }
