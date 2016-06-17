@@ -39,7 +39,10 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
             }
         }
 
-        public void Dispose() { }
+        public void Dispose()
+        {
+            _enumeratorStack = null;
+        }
 
         public bool MoveNext()
         {
@@ -60,9 +63,6 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
             }
         }
 
-        public void Reset()
-        {
-            throw new NotImplementedException();
-        }
+        public void Reset() { }
     }
 }
