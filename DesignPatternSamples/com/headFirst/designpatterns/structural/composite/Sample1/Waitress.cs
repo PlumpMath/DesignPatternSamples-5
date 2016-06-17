@@ -19,11 +19,9 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
         public void PrintVegetarianMenu()
         {
             Console.WriteLine("\r\nVEGETARIAN MENU\r\n----");
-            var enumerator = _allMenus.GetEnumerator();
 
-            while(enumerator.MoveNext())
+            foreach(var menu in _allMenus)
             {
-                var menu = enumerator.Current;
                 try
                 {
                     if (menu.Vegetarian)
