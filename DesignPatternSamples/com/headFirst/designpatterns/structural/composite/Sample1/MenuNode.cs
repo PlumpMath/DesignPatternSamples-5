@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 {
     class MenuNode : MenuComponent
     {
         ArrayList _menuComponents;
+        IEnumerator<MenuComponent> _enumerator = null;
 
         public MenuNode(string name, string description)
             : base(name, description)
@@ -36,6 +38,13 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 
             foreach (var component in _menuComponents)
                 ((MenuComponent)component).Print();
+        }
+
+        public override IEnumerator<MenuComponent> GetEnumerator()
+        {
+            if (_enumerator == null)
+                _enumerator = new CompositeEnumerator((IEnumerator<MenuComponent>)_menuComponents.GetEnumerator());
+            return _enumerator;
         }
     }
 }
