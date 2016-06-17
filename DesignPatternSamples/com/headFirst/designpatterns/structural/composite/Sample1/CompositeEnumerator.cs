@@ -6,7 +6,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 {
     class CompositeEnumerator : IEnumerator<MenuComponent>
     {
-        Stack<IEnumerator<MenuComponent>> _enumeratorStack;
+        Stack<IEnumerator<MenuComponent>> _enumeratorStack = new Stack<IEnumerator<MenuComponent>>();
 
         public CompositeEnumerator(IEnumerator<MenuComponent> enumerator)
         {
@@ -17,7 +17,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
         {
             get
             {
-                if (MoveNext())
+                if (_enumeratorStack.Count != 0)
                 {
                     var enumerator = _enumeratorStack.Peek();
                     var component = enumerator.Current;
@@ -39,10 +39,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
             }
         }
 
-        public void Dispose()
-        {
-            _enumeratorStack = null;
-        }
+        public void Dispose() { }
 
         public bool MoveNext()
         {

@@ -127,6 +127,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
             Waitress waitress = new Waitress(allMenus);
 
             waitress.PrintMenu();
+            waitress.PrintVegetarianMenu();
 
             Console.Read();
         }

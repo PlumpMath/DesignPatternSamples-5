@@ -6,13 +6,13 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
 {
     class MenuNode : MenuComponent
     {
-        ArrayList _menuComponents;
+        IList<MenuComponent> _menuComponents;
         IEnumerator<MenuComponent> _enumerator = null;
 
         public MenuNode(string name, string description)
             : base(name, description)
         {
-            _menuComponents = new ArrayList();
+            _menuComponents = new List<MenuComponent>();
         }
 
         public override void Add(MenuComponent menuComponent)
@@ -43,7 +43,7 @@ namespace Com.HeadFirst.DesignPatterns.Structural.Composite.Sample1
         public override IEnumerator<MenuComponent> GetEnumerator()
         {
             if (_enumerator == null)
-                _enumerator = new CompositeEnumerator((IEnumerator<MenuComponent>)_menuComponents.GetEnumerator());
+                _enumerator = new CompositeEnumerator(_menuComponents.GetEnumerator());
             return _enumerator;
         }
     }
