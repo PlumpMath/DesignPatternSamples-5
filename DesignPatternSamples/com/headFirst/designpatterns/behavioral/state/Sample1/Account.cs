@@ -1,4 +1,6 @@
-﻿namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
+﻿using System;
+
+namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 {
     class Account
     {
@@ -26,18 +28,30 @@
         {
             _currentState.Deposit(amount);
             _balance = _currentState.GetBalance();
+            Console.WriteLine("Diposit amount: {0:C}----", amount);
+            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Status: {0}", _currentState.GetType().Name);
+            Console.WriteLine();
         }
 
         public void Withdraw(double amount)
         {
             _currentState.Withdraw(amount);
             _balance = _currentState.GetBalance();
+            Console.WriteLine("Withdraw amount: {0:C}----", amount);
+            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Status: {0}", _currentState.GetType().Name);
+            Console.WriteLine();
         }
 
         public void PayInterest()
         {
             _currentState.PayInterest();
             _balance = _currentState.GetBalance();
+            Console.WriteLine("Interest paid----");
+            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Status: {0}", _currentState.GetType().Name);
+            Console.WriteLine();
         }
 
         public void SetState(IAccountState state)

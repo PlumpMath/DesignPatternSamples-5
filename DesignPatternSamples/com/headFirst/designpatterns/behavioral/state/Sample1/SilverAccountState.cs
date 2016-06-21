@@ -1,25 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
+﻿namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 {
     class SilverAccountState : IAccountState
     {
         Account _accountContext;
         double _balance;
 
+        double _lowerLimit;
+        double _upperLimit;
+        double _interestRate;
+
         public SilverAccountState(Account accountContext)
         {
             _accountContext = accountContext;
             _balance = _accountContext.GetBalance();
+            initialize();
         }
 
         public void Deposit(double amount)
         {
-            throw new NotImplementedException();
+            _balance += amount;
+            changeState();
         }
 
         public double GetBalance()
@@ -29,12 +29,29 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 
         public void PayInterest()
         {
-            throw new NotImplementedException();
+            _balance += _interestRate * _balance;
+            changeState();
         }
 
         public void Withdraw(double amount)
         {
-            throw new NotImplementedException();
+            _balance -= amount;
+            changeState();
+        }
+
+        private void initialize()
+        {
+            _lowerLimit = 0d;
+            _upperLimit = 1000d;
+            _interestRate = 0d;
+        }
+
+        private void changeState()
+        {
+            if (_balance < _lowerLimit)
+                _accountContext.SetState(_accountContext.GetNilState());
+            else if (_balance > _upperLimit)
+                _accountContext.SetState(_accountContext.GetGoldState());
         }
     }
 }
