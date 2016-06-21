@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="GoldAccountState.cs" />
     <Compile Include="IAccountState.cs" />
+    <Compile Include="NilAccountState.cs" />
+    <Compile Include="SilverAccountState.cs" />
     <Compile Include="StateSample1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

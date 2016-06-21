@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
+﻿namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 {
     class Account
     {
@@ -17,6 +11,9 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 
         public Account(double balance)
         {
+            _nilAcountState = new NilAccountState(this);
+            _silverAccountState = new SilverAccountState(this);
+            _goldAccountState = new GoldAccountState(this);
             _balance = balance;
         }
 
@@ -43,19 +40,24 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
             _balance = _currentState.GetBalance();
         }
 
+        public void SetState(IAccountState state)
+        {
+            _currentState = state;
+        }
+
         public IAccountState GetNilState()
         {
-            
+            return _nilAcountState;
         }
 
         public IAccountState GetSilverState()
         {
-
+            return _silverAccountState;
         }
 
         public IAccountState GetGoldState()
         {
-
+            return _goldAccountState;
         }
     }
 }
