@@ -3,7 +3,6 @@
     class SilverAccountState : IAccountState
     {
         Account _accountContext;
-        double _balance;
 
         double _lowerLimit;
         double _upperLimit;
@@ -12,30 +11,24 @@
         public SilverAccountState(Account accountContext)
         {
             _accountContext = accountContext;
-            _balance = _accountContext.GetBalance();
             initialize();
         }
 
         public void Deposit(double amount)
         {
-            _balance += amount;
+            _accountContext.Balance += amount;
             changeState();
-        }
-
-        public double GetBalance()
-        {
-            return _balance;
         }
 
         public void PayInterest()
         {
-            _balance += _interestRate * _balance;
+            _accountContext.Balance += _interestRate * _accountContext.Balance;
             changeState();
         }
 
         public void Withdraw(double amount)
         {
-            _balance -= amount;
+            _accountContext.Balance -= amount;
             changeState();
         }
 
@@ -48,9 +41,9 @@
 
         private void changeState()
         {
-            if (_balance < _lowerLimit)
+            if (_accountContext.Balance < _lowerLimit)
                 _accountContext.SetState(_accountContext.GetNilState());
-            else if (_balance > _upperLimit)
+            else if (_accountContext.Balance > _upperLimit)
                 _accountContext.SetState(_accountContext.GetGoldState());
         }
     }

@@ -5,7 +5,6 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
     class NilAccountState : IAccountState
     {
         Account _accountContext;
-        double _balance;
 
         double _lowerLimit;
         double _upperLimit;
@@ -14,19 +13,13 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
         public NilAccountState(Account accountContext)
         {
             _accountContext = accountContext;
-            _balance = _accountContext.GetBalance();
             initialize();
         }
 
         public void Deposit(double amount)
         {
-            _balance += amount;
+            _accountContext.Balance += amount;
             changeState();
-        }
-
-        public double GetBalance()
-        {
-            return _balance;
         }
 
         public void PayInterest() { }
@@ -46,7 +39,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 
         private void changeState()
         {
-            if (_balance > _upperLimit)
+            if (_accountContext.Balance > _upperLimit)
                 _accountContext.SetState(_accountContext.GetSilverState());
         }
     }

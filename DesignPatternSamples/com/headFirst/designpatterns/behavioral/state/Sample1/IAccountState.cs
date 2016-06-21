@@ -2,9 +2,7 @@
 {
     interface IAccountState
     {
-        double GetBalance();
-
-        void Deposit(double amount);
+       void Deposit(double amount);
 
         void Withdraw(double amount);
 

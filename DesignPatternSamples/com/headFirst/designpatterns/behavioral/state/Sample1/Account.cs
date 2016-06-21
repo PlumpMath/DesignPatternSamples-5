@@ -4,7 +4,6 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
 {
     class Account
     {
-        double _balance = 0;
         IAccountState _nilAcountState;
         IAccountState _silverAccountState;
         IAccountState _goldAccountState;
@@ -16,20 +15,27 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
             _nilAcountState = new NilAccountState(this);
             _silverAccountState = new SilverAccountState(this);
             _goldAccountState = new GoldAccountState(this);
-            _balance = balance;
+
+            Balance = balance;
+
+            if (Balance > 0 && Balance <= 1000)
+                _currentState = _silverAccountState;
+            else if (Balance > 1000)
+                _currentState = _goldAccountState;
+            else
+                _currentState = _nilAcountState;
         }
 
-        public double GetBalance()
+        public double Balance
         {
-            return _balance;
+            get; set;
         }
 
         public void Deposit(double amount)
         {
             _currentState.Deposit(amount);
-            _balance = _currentState.GetBalance();
             Console.WriteLine("Diposit amount: {0:C}----", amount);
-            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Balance: {0:C}", Balance);
             Console.WriteLine("Status: {0}", _currentState.GetType().Name);
             Console.WriteLine();
         }
@@ -37,9 +43,8 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
         public void Withdraw(double amount)
         {
             _currentState.Withdraw(amount);
-            _balance = _currentState.GetBalance();
             Console.WriteLine("Withdraw amount: {0:C}----", amount);
-            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Balance: {0:C}", Balance);
             Console.WriteLine("Status: {0}", _currentState.GetType().Name);
             Console.WriteLine();
         }
@@ -47,9 +52,8 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample1
         public void PayInterest()
         {
             _currentState.PayInterest();
-            _balance = _currentState.GetBalance();
             Console.WriteLine("Interest paid----");
-            Console.WriteLine("Balance: {0:C}", _balance);
+            Console.WriteLine("Balance: {0:C}", Balance);
             Console.WriteLine("Status: {0}", _currentState.GetType().Name);
             Console.WriteLine();
         }
