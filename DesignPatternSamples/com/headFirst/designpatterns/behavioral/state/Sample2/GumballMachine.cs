@@ -15,6 +15,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
 
         public GumballMachine(int numberOfGumballs)
         {
+            _noQuarterState = new NoQuarterState(this);
             _gumballCount = numberOfGumballs;
         }
 

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="GumballMachine.cs" />
     <Compile Include="IState.cs" />
+    <Compile Include="NoQuarterState.cs" />
     <Compile Include="StateSample2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
