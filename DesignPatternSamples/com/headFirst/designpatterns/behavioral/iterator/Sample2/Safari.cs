@@ -2,7 +2,7 @@
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
 {
-    class Safari
+    class Safari : IAnimalEnumerable
     {
         Animal[] _animals;
         readonly int MAX_LIMIT = 6;
@@ -31,6 +31,11 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
             {
                 _animals.SetValue(item, _animals.Length);
             }
+        }
+
+        public IAnimalEnumerator Enumerator()
+        {
+            return new AnimalEnumerator(_animals.GetEnumerator());
         }
     }
 }

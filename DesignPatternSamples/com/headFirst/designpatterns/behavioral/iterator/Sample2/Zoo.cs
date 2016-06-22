@@ -2,7 +2,7 @@
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
 {
-    class Zoo
+    class Zoo : IAnimalEnumerable
     {
         ArrayList _animals;
 
@@ -28,6 +28,11 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
         {
             var item = new Animal(name, wild);
             _animals.Add(item);
+        }
+
+        public IAnimalEnumerator Enumerator()
+        {
+            return new AnimalEnumerator(_animals.GetEnumerator());
         }
     }
 }
