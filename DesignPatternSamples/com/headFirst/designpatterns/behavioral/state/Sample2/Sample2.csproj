@@ -47,6 +47,7 @@
     <Compile Include="HasQuarterState.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="NoQuarterState.cs" />
+    <Compile Include="SoldState.cs" />
     <Compile Include="StateSample2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
