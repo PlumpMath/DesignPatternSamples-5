@@ -5,12 +5,13 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
     class Safari : IAnimalEnumerable
     {
         Animal[] _animals;
+        int _counter = 0;
         readonly int MAX_LIMIT = 6;
 
         public Safari()
         {
             _animals = new Animal[MAX_LIMIT];
-            AddAnimal("Buffelow", false);
+            AddAnimal("Raging Bull", true);
             AddAnimal("Rhino", true);
             AddAnimal("Bear", true);
             AddAnimal("Elephant", false);
@@ -25,11 +26,11 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
         {
             var item = new Animal(name, wild);
 
-            if (_animals.Length >= MAX_LIMIT)
+            if (_counter >= MAX_LIMIT)
                 Console.WriteLine("Sorry!! can't add more animal");
             else
             {
-                _animals.SetValue(item, _animals.Length);
+                _animals[_counter++] = item;
             }
         }
 

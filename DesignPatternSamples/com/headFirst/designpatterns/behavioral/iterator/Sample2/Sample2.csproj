@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Animal.cs" />
     <Compile Include="AnimalEnumerator.cs" />
+    <Compile Include="AnimalGuide.cs" />
     <Compile Include="IAnimalEnumerable.cs" />
     <Compile Include="IAnimalEnumerator.cs" />
     <Compile Include="IteratorSample2.cs" />

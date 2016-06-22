@@ -21,7 +21,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.Iterator.Sample2
 
         public bool MoveNext()
         {
-            return _animalEnumerator.MoveNext();
+            return _animalEnumerator.MoveNext() && _animalEnumerator.Current != null;
         }
     }
 }
