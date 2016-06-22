@@ -4,6 +4,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
 {
     class HasQuarterState : IState
     {
+        Random randomWinner = new Random(DateTime.Now.Millisecond);
         GumballMachine _gumballMachine;
 
         public HasQuarterState(GumballMachine gumballMachine)
@@ -32,7 +33,11 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
         public void TurnCrank()
         {
             Console.WriteLine("You turned....");
-            _gumballMachine.SetState(_gumballMachine.GetSoldState());
+            var winner = randomWinner.Next(10);
+            if (winner == 0 && _gumballMachine.GetCount() > 1)
+                _gumballMachine.SetState(_gumballMachine.GetWinnerState());
+            else
+                _gumballMachine.SetState(_gumballMachine.GetSoldState());
         }
 
         public override string ToString()

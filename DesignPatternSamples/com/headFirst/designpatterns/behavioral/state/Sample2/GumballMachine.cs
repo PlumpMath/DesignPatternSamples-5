@@ -9,6 +9,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
         IState _noQuarterState;
         IState _hasQuarterState;
         IState _soldState;
+        IState _winnerState;
 
         IState _state;
         int _gumballCount = 0;
@@ -19,6 +20,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
             _hasQuarterState = new HasQuarterState(this);
             _soldState = new SoldState(this);
             _soldOutState = new SoldOutState(this);
+            _winnerState = new WinnerState(this);
 
             _gumballCount = numberOfGumballs;
 
@@ -86,6 +88,11 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
         public IState GetSoldState()
         {
             return _soldState;
+        }
+
+        public IState GetWinnerState()
+        {
+            return _winnerState;
         }
 
         public override string ToString()
