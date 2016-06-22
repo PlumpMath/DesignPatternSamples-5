@@ -2,41 +2,42 @@
 
 namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
 {
-    class NoQuarterState : IState
+    class HasQuarterState : IState
     {
         GumballMachine _gumballMachine;
 
-        public NoQuarterState(GumballMachine gumballMachine)
+        public HasQuarterState(GumballMachine gumballMachine)
         {
             _gumballMachine = gumballMachine;
         }
 
         public void Dispense()
         {
-            Console.WriteLine("You need to pay first");
+            Console.WriteLine("No gumball dispensed");
         }
 
         public void EjectQuarter()
         {
-            Console.WriteLine("You haven't inserted a quarter");
+            Console.WriteLine("Quarter returned");
+            _gumballMachine.SetState(_gumballMachine.GetNoQuarterState());
         }
 
         public void InsertQuarter()
         {
-            Console.WriteLine("You inserted a quarter");
-            _gumballMachine.SetState(_gumballMachine.GetHasQuarterState());
+            Console.WriteLine("You can't insert another quarter");
         }
 
         public void Refill() { }
 
         public void TurnCrank()
         {
-            Console.WriteLine("You turned, but there's no quarter");
+            Console.WriteLine("You turned....");
+            _gumballMachine.SetState(_gumballMachine.GetSoldState());
         }
 
         public override string ToString()
         {
-            return "waiting for quarter";
+            return "waiting for turn of crank";
         }
     }
 }
