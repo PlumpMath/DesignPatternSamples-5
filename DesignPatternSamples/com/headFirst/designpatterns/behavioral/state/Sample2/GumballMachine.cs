@@ -94,7 +94,7 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
             builder.Append("\r\nMighty Gumball, Inc.");
             builder.Append("\r\n.Net-enabled Standing Gumball Model #2016");
             builder.AppendFormat("\r\nInventory: {0} gumball(s)", _gumballCount);
-            builder.AppendFormat("\r\nMachine is {0} \r\n", _state.ToString());
+            builder.AppendFormat("\r\nMachine is {0} \r\n", _state);
             return builder.ToString();
         }
     }
