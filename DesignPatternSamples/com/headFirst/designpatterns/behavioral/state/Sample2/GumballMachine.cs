@@ -18,7 +18,14 @@ namespace Com.HeadFirst.DesignPatterns.Behavioral.State.Sample2
             _noQuarterState = new NoQuarterState(this);
             _hasQuarterState = new HasQuarterState(this);
             _soldState = new SoldState(this);
+            _soldOutState = new SoldOutState(this);
+
             _gumballCount = numberOfGumballs;
+
+            if (_gumballCount > 0)
+                _state = _noQuarterState;
+            else
+                _state = _soldOutState;
         }
 
         public void InsertQuarter()
