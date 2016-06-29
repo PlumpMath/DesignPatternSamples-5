@@ -2,6 +2,6 @@
 {
     class BusinessLoan : Loan
     {
-        public BusinessLoan(double interestRate) : base(interestRate) { }
+        public BusinessLoan(double interestRate) : base(interestRate, LoanType.Business) { }
     }
 }

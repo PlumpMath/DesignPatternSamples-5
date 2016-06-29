@@ -47,12 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank.cs" />
     <Compile Include="BusinessLoan.cs" />
     <Compile Include="EducationLoan.cs" />
     <Compile Include="FactoryMethodSample2.cs" />
+    <Compile Include="HdfcBank.cs" />
     <Compile Include="HomeLoan.cs" />
+    <Compile Include="IBank.cs" />
+    <Compile Include="ICICIBank.cs" />
     <Compile Include="Loan.cs" />
+    <Compile Include="LoanFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SBIBank.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -2,6 +2,6 @@
 {
     class HomeLoan : Loan
     {
-        public HomeLoan(double interestRate) : base(interestRate) { }
+        public HomeLoan(double interestRate) : base(interestRate, LoanType.Home) { }
     }
 }
