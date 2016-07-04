@@ -46,10 +46,17 @@
     <Compile Include="AbstractFactorySample2.cs" />
     <Compile Include="Cars\Car.cs" />
     <Compile Include="Cars\HatchbackCar.cs" />
+    <Compile Include="Cars\LUVCar.cs" />
+    <Compile Include="Cars\SedenCar.cs" />
+    <Compile Include="Cars\SUVCar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpareParts\CustomCarPartsFactory.cs" />
     <Compile Include="SpareParts\Engine.cs" />
     <Compile Include="SpareParts\EngineStarter.cs" />
+    <Compile Include="SpareParts\HatchbackCarPartsFactory.cs" />
     <Compile Include="SpareParts\ICarPartsFactory.cs" />
+    <Compile Include="SpareParts\LuxeryCarPartsFactory.cs" />
+    <Compile Include="SpareParts\SedenCarPartsFactory.cs" />
     <Compile Include="SpareParts\Transmission.cs" />
     <Compile Include="SpareParts\Wheel.cs" />
     <Compile Include="SpareParts\Window.cs" />

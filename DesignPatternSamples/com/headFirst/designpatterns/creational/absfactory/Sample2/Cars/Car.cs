@@ -24,11 +24,11 @@ namespace Com.HeadFirst.DesignPatterns.Creational.AbstractFactory.Sample2.Cars
         {
             Console.WriteLine("Assembling {0} car", ModelName);
 
-            Wheel = carpartFactory.CreateWheel();
-            Engine = carpartFactory.CreateEngine();
-            Transmission = carpartFactory.CreateTransmission();
-            Window = carpartFactory.CreateWindow();
-            Starter = carpartFactory.CreateStarter();
+            Wheel = carpartFactory.GetWheel();
+            Engine = carpartFactory.GetEngine();
+            Transmission = carpartFactory.GetTransmission();
+            Window = carpartFactory.GetWindow();
+            Starter = carpartFactory.GetStarter();
         }
 
         public override string ToString()

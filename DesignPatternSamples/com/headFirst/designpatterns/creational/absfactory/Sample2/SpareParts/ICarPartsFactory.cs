@@ -2,14 +2,14 @@
 {
     interface ICarPartsFactory
     {
-        Wheel CreateWheel();
+        Wheel GetWheel();
 
-        Engine CreateEngine();
+        Engine GetEngine();
 
-        Transmission CreateTransmission();
+        Transmission GetTransmission();
 
-        Window CreateWindow();
+        Window GetWindow();
 
-        EngineStarter CreateStarter();
+        EngineStarter GetStarter();
     }
 }

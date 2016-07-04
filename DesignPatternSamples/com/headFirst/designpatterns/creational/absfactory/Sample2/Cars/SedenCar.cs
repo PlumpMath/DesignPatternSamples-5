@@ -2,14 +2,14 @@
 
 namespace Com.HeadFirst.DesignPatterns.Creational.AbstractFactory.Sample2.Cars
 {
-    class HatchbackCar : Car
+    class SedenCar : Car
     {
-        public HatchbackCar()
+        public SedenCar()
         {
-            carpartFactory = new HatchbackCarPartsFactory();
+            carpartFactory = new SedenCarPartsFactory();
         }
 
-        public HatchbackCar(ICarPartsFactory carpartFactory)
+        public SedenCar(ICarPartsFactory carpartFactory)
         {
             this.carpartFactory = carpartFactory;
         }
