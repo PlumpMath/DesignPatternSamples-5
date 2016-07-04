@@ -49,6 +49,9 @@
     <Compile Include="Cars\LUVCar.cs" />
     <Compile Include="Cars\SedenCar.cs" />
     <Compile Include="Cars\SUVCar.cs" />
+    <Compile Include="Manufecture\CarFactory.cs" />
+    <Compile Include="Manufecture\Mahindra.cs" />
+    <Compile Include="Manufecture\TataMotors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpareParts\CustomCarPartsFactory.cs" />
     <Compile Include="SpareParts\Engine.cs" />

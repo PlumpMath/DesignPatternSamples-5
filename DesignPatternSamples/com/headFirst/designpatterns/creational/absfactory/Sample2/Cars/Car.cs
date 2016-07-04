@@ -22,7 +22,7 @@ namespace Com.HeadFirst.DesignPatterns.Creational.AbstractFactory.Sample2.Cars
 
         public virtual void AssembleCar()
         {
-            Console.WriteLine("Assembling {0} car", ModelName);
+            Console.WriteLine("Assembling {0}", ModelName);
 
             Wheel = carpartFactory.GetWheel();
             Engine = carpartFactory.GetEngine();
@@ -45,7 +45,7 @@ namespace Com.HeadFirst.DesignPatterns.Creational.AbstractFactory.Sample2.Cars
                 builder.AppendLine(Window.ToString());
             if (Starter != null)
                 builder.AppendLine(Starter.ToString());
-            return base.ToString();
+            return builder.ToString();
         }
     }
 }
